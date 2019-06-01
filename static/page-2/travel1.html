@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Travel</title>
+  <link href="https://fonts.googleapis.com/css?family=BioRhyme" rel="stylesheet">
+
+  <!-- Compiled and minified CSS -->
+
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel='stylesheet' href='style.css'>
+  <link rel="icon" href="assets/images/favicon (4).ico" type="image/ico">
+  <!-- firebase -->
+  <script src="https://www.gstatic.com//5.9.1/firebase.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <div class="navbar-fixed">
+    <nav class="#f44336 red">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="#!"   <i class="large material-icons ">airplanemode_active</i>    
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <a href="#Profile">Profile</a>
+            </li>
+
+            <li>
+              <a href="#popular">Popular</i></a>
+            </li>
+            <li>
+              <a href="#gallery">Gallery</i></a>
+            </li>
+
+            <li>
+              <a href="file:///Users/hayderachir/Desktop/pross/project-2/RESTful-Node-Express-App/static/index.html"
+                id="logout" class="waves-effect waves-light btn black darken-4">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <ul class="sidenav" id="mobile-demo">
+    <li>
+      <a href="#Profile">Profile</a>
+    </li>
+    <li>
+      <a href="#popular">Popular Places</a>
+    </li>
+    <li>
+      <a href="#gallery">Gallery</a>
+    </li>
+  </ul>
+  <br>
+  <!-- Section: Popular -->
+  <section id="popular" class="section section-popular scrollspy">
+    <div class="container">
+      <div class="row">
+        <h4 class="center">
+          <span class="teal-text">Popular</span> Places</h4>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://image.ibb.co/hbEMux/resort1.jpg" alt="">
+              <span class="card-title">Cancun, Mexico</span>
+            </div>
+            <div class="card-content">
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas aliquid fugiat corporis laudantium,
+                architecto
+                delectus?
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://image.ibb.co/mn1egc/resort2.jpg" alt="">
+              <span class="card-title">The Bahamas</span>
+            </div>
+            <div class="card-content">
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas aliquid fugiat corporis laudantium,
+                architecto
+                delectus?
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://image.ibb.co/mbCVnH/resort3.jpg" alt="">
+              <span class="card-title">Nova Scotia</span>
+            </div>
+            <div class="card-content">
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas aliquid fugiat corporis laudantium,
+                architecto
+                delectus?
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Follow -->
+
+  <!-- Section: Gallery -->
+  <section id="gallery" class="section section-gallery scrollspy">
+    <div class="container">
+      <h4 class="center">
+        <span class="teal-text">Photo </span> Gallery
+      </h4>
+      <div class="row">
+        <div class="col s12 m3">
+          <img class="materialboxed responsive-img" src="https://source.unsplash.com/1600x900/?beach" alt="">
+        </div>
+        <div class="col s12 m3">
+          <img class="materialboxed responsive-img" src="https://source.unsplash.com/1600x900/?travel" alt="">
+        </div>
+        <div class="col s12 m3">
+          <img class="materialboxed responsive-img" src="https://source.unsplash.com/1600x900/?nature" alt="">
+        </div>
+        <div class="col s12 m3">
+          <img class="materialboxed responsive-img" src="https://source.unsplash.com/1600x900/?beach, travel" alt="">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m3">
+          <img class="materialboxed responsive-img" src="https://source.unsplash.com/1600x900/?beaches" alt="">
+        </div>
+        <div class="col s12 m3">
+          <img class="materialboxed responsive-img" src="https://source.unsplash.com/1600x900/?traveling" alt="">
+        </div>
+        <div class="col s12 m3">
+          <img class="materialboxed responsive-img" src="https://source.unsplash.com/1600x900/?bridge" alt="">
+        </div>
+        <div class="col s12 m3">
+          <img class="materialboxed responsive-img" src="https://source.unsplash.com/1600x900/?boat, travel" alt="">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m3">
+          <img class="materialboxed responsive-img" src="https://source.unsplash.com/1600x900/?building" alt="">
+        </div>
+        <div class="col s12 m3">
+          <img class="materialboxed responsive-img" src="https://source.unsplash.com/1600x900/?trees" alt="">
+        </div>
+        <div class="col s12 m3">
+          <img class="materialboxed responsive-img" src="https://source.unsplash.com/1600x900/?water" alt="">
+        </div>
+        <div class="col s12 m3">
+          <img class="materialboxed responsive-img" src="https://source.unsplash.com/1600x900/?cruise" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="section #ef6c00 orange darken-3 lighten-2 darken-2 white-text center">
+    <p class="flow-text">Hachir &copy; 2019</p>
+  </footer>
+  </body>
+
+</html>

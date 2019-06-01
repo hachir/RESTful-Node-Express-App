@@ -1,0 +1,42 @@
+{
+  "name": "amelia",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Amelia - Social Trip Planner",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "cross-env NODE_ENV=test mocha -u tdd --recursive --reporter spec --exit"
+  },
+  "license": "ISC",
+  "dependencies": {
+<<<<<<< HEAD
+    "babel-eslint": "^10.0.1",
+    "bcrypt-nodejs": "0.0.3",
+=======
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.19.0",
+>>>>>>> b0b5a8e4bd2a412daa23ab869ff615c1411811d8
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.16.1",
+    "moment": "^2.24.0",
+    "moment-range": "^4.0.2",
+    "morgan": "^1.9.1",
+    "mysql": "^2.17.1",
+    "mysql2": "^1.6.4",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "sequelize": ">=5.3.0",
+    "unirest": "^0.6.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "cross-env": "^5.2.0",
+    "mocha": "^5.2.0"
+  }
+}

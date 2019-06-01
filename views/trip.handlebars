@@ -1,0 +1,470 @@
+<nav class="navbar navbar-expand-lg navbar-dark nav-custom">
+  <a class="navbar-brand" href="/dashboard">
+    <img src="/images/amelia-icon.png" class="logo"> <span class="logo-title">AMELIA</span>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#amelia-navbar"
+    aria-controls="amelia-navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="amelia-navbar">
+    <div class="navbar-nav ml-auto py-2">
+      <a class="nav-item nav-link btn bg-primary custom border-0 mx-1" href="/logout">Log Out</a>
+    </div>
+  </div>
+</nav>
+
+<div class="limiter">
+  <div class="container-login100">
+    <div class="main card p-3 w-100 border-0">
+      <div id="banner" class="card border-0 mb-5">
+        <img class="card-img"
+          src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=80"
+          alt="Card image">
+        <div class="card-img-overlay text-white d-flex justify-content-between align-items-end">
+          <h4 class=" text-shadow trip-title">Spring Break Getaway</h4>
+          <h5 class="  text-shadow trip-location">Bali, Indonesia</h5>
+          <p class="card-text text-white text-shadow" id="trip-dates">June 20 to June 20, 2019</p>
+        </div>
+      </div>
+      <ul class="nav nav-pills mb-3" id="tab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="overview-tab" data-toggle="pill" href="#overview" role="tab"
+            aria-controls="overview" aria-selected="true">Overview</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="packing-tab" data-toggle="pill" href="#packing" role="tab" aria-controls="packing"
+            aria-selected="false">Packing Checklist</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="itinerary-tab" data-toggle="pill" href="#itinerary" role="tab"
+            aria-controls="itinerary" aria-selected="false">Itinerary</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="budget-tab" data-toggle="pill" href="#budget" role="tab" aria-controls="budget"
+            aria-selected="false">Budget</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="tabContent">
+        {{!-- Overview Tab --}}
+        <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+          <div class="row align-items-stretch">
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Trip Attendees</h5>
+                  <div class="card-text d-flex flex-wrap" id="attendees">
+                    <div class="attendee m-3">
+                      <img src="/images/pilot.svg">
+                      <p class="text-center pt-3">Daniel Tovar (Organizer)</p>
+                    </div>
+                    <div class="attendee m-3">
+                      <img src="/images/pilot.svg">
+                      <p class="text-center pt-3">Hunter Davis</p>
+                    </div>
+                    <div class="attendee m-3">
+                      <img src="/images/pilot.svg">
+                      <p class="text-center pt-3">Claire Morawski</p>
+                    </div>
+                    <div class="attendee m-3">
+                      <img src="/images/pilot.svg">
+                      <p class="text-center pt-3">Hayder Achir</p>
+                    </div>
+                  </div>
+                  <div class="card-text">
+                    <h6>Would you like to invite other friends? Send them this link:</h6>
+                    <input type="text" class="form-control" id="invite-link" value="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card">
+                <h5 class="card-header">
+                  Trip Info at a Glance
+                </h5>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><strong><em>4</em></strong> out of 11 items packed</li>
+                  <li class="list-group-item"><strong><em>10</em></strong> events planned in 8 days</li>
+                  <li class="list-group-item">Total Budget: <strong><em>$1200</em></strong></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{!-- Packing Tab --}}
+        <div class="tab-pane fade" id="packing" role="tabpanel" aria-labelledby="packing-tab">
+          <div class="row align-items-stretch">
+            <div class="col-sm-8">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Packing List</h5>
+                  <div class="card-text" id="packing-list">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>Item</th>
+                          <th>Packed?</th>
+                          <th>Delete?</th>
+                        </tr>
+                      </thead>
+                      <tbody id="packingListBody">
+                        <tr id="form-row">
+                          <form id="packing-list-form">
+                            <td colspan="2">
+                              <input type="text" id="packing-item" class="form-control" placeholder="Lucky Socks"
+                                required>
+                            </td>
+                            <td><button class="btn btn-lg btn-success" type="submit" id="add-packing-item">Add
+                                Item</button></td>
+                          </form>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="card border-0 d-flex justify-content-center align-items-center" style="background: #1F2756">
+                <div class="card-body text-center">
+                  <h4 class="text-white">
+                    <p class="display-4 text-white"><em>7 of 13</em></p> items packed
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        {{!-- Itinerary Tab --}}
+        <div class="tab-pane fade" id="itinerary" role="tabpanel" aria-labelledby="itinerary-tab">
+          <div class="days-container">
+            <div class="row align-items-stretch">
+              <div class="col-sm-6" id="form-column">
+                <div class="col">
+                  <div class="card day" style="background: #1F2756;color: white;">
+                    <div class="card-body">
+                      <h5 class="card-title">Plan Your Trip</h5>
+                      <div class="card-text">
+                        <form id="itinerary-form">
+                          <div class="form-group">
+                            <label for="event-title">Name Your Event <span class="text-danger">*</span></label><input
+                              type="text" id="event-title" class="form-control" placeholder="Art Museum" required
+                              aria-required="true">
+                          </div>
+                          <div class="form-group">
+                            <label for="event-category">Choose a Category <span
+                                class="text-danger">*</span></label><select class="form-control" id="event-category"
+                              required>
+                              <option>Sightseeing</option>
+                              <option>Dining</option>
+                              <option>Nightlife</option>
+                              <option>Nature</option>
+                              <option>Art &amp; Culture</option>
+                              <option>Other</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label for="event-day">Select a Day <span class="text-danger">*</span>
+                              <small>(cmd/ctrl+click to select multiple
+                                days)</small></label><select class="form-control" id="event-day" required>
+                              <option value="day-1">Friday, April 3</option>
+                              <option value="day-2">Saturday, April 4</option>
+                              <option value="day-3">Sunday, April 5</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label for="event-time">Schedule a Time <span class="text-danger">*</span></label><input
+                              type="time" id="event-time" class="form-control" placeholder="13:30" required
+                              aria-required="true">
+                          </div>
+                          <hr>
+                          <div class="form-group">
+                            <label for="event-budget">Set a Budget</label>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <div class="input-group-text">$</div>
+                              </div>
+                              <input type="number" id="event-budget" class="form-control" placeholder="40"
+                                aria-required="false">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="event-desc">Make Some Notes</label>
+                            <textarea rows="2" id="event-desc" class="form-control"></textarea>
+                          </div>
+                          <button class="btn btn-lg custom bg-primary" id="add-event" type="submit">Add Event</button>
+                          <p><small class="text-danger">* required</small></p>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="col mb-3">
+                  <div class="card">
+                    <h5 class="card-header d-flex justify-content-between align-items-center">
+                      Friday, April 3, 2019
+                      <div class="badge badge-success badge-pill">Daily Budget: $125</div>
+                    </h5>
+                    <ul class="list-group list-group-flush" id="day-1">
+                      <li class="list-group-item" type="button" data-toggle="collapse" data-target="#event1">Fancy
+                        Croissants for Breakfast</li>
+                      <div class="collapse" id="event1">
+                        <div class="card-body">
+                          Here is a note a user has left about this event.
+                        </div>
+                      </div>
+                      <li class="list-group-item" type="button" data-toggle="collapse" data-target="#event2">Orsay
+                        Museum</li>
+                      <div class="collapse" id="event2">
+                        <div class="card-body">
+                          Here is a note a user has left about this event.
+                        </div>
+                      </div>
+                      <li class="list-group-item" type="button" data-toggle="collapse" data-target="#event3">Crepes for
+                        Lunch</li>
+                      <div class="collapse" id="event3">
+                        <div class="card-body">
+                          Here is a note a user has left about this event.
+                        </div>
+                      </div>
+                      <li class="list-group-item" type="button" data-toggle="collapse" data-target="#event4">Eiffel
+                        Tower</li>
+                      <div class="collapse" id="event4">
+                        <div class="card-body">
+                          Here is a note a user has left about this event.
+                        </div>
+                      </div>
+                      <li class="list-group-item" type="button" data-toggle="collapse" data-target="#event5">Snails and
+                        Frogs for Dinner</li>
+                      <div class="collapse" id="event5">
+                        <div class="card-body">
+                          Here is a note a user has left about this event.
+                        </div>
+                      </div>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col mb-3">
+                  <div class="card day ">
+                    <h5 class="card-header d-flex justify-content-between align-items-center">
+                      Saturday, April 4, 2019
+                      <div class="badge badge-success badge-pill">Daily Budget: $125</div>
+                    </h5>
+                    <ul class="list-group list-group-flush" id="day-2">
+                      <li class="list-group-item" type="button" data-toggle="collapse" data-target="#event6">More Events
+                      </li>
+                      <div class="collapse" id="event6">
+                        <div class="card-body">
+                          Here is a note a user has left about this event.
+                        </div>
+                      </div>
+                      <li class="list-group-item" type="button" data-toggle="collapse" data-target="#event7">Another
+                        Event</li>
+                      <div class="collapse" id="event7">
+                        <div class="card-body">
+                          Here is a note a user has left about this event.
+                        </div>
+                      </div>
+
+                    </ul>
+                  </div>
+                </div>
+                <div class="col mb-3">
+                  <div class="card day ">
+                    <h5 class="card-header d-flex justify-content-between align-items-center">
+                      Sunday, April 5, 2019
+                      <div class="badge badge-success badge-pill">Daily Budget: $125</div>
+                    </h5>
+                    <ul class="list-group list-group-flush" id="day-3">
+                      <li class="list-group-item" type="button" data-toggle="collapse" data-target="#event8">One Last
+                        Fun Parisian Thing
+                      </li>
+                      <div class="collapse" id="event8">
+                        <div class="card-body">
+                          Here is a note a user has left about this event.
+                        </div>
+                      </div>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{!-- Budget Tab --}}
+
+        <div class="modal fade" id="flights" tabindex="-1" role="dialog" aria-labelledby="flights" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-center">Search for a flight</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="flight-origin">Flying from</label>
+                    <input type="text" class="form-control" id="flight-origin" placeholder="JFK">
+                    <small class="form-text text-muted">Must enter an airport code</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="flight-dest">Flying to</label>
+                    <input type="text" class="form-control" id="flight-dest" placeholder="SFO">
+                    <small class="form-text text-muted">Must enter an airport code</small>
+
+                  </div>
+                  <div class="form-group">
+                    <label for="flight-outbound">Departing</label>
+                    <input type="text" class="form-control" id="flight-outbound" placeholder="YYYY-MM-DD">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="flight-inbound">Returning</label>
+                    <input type="text" class="form-control" id="flight-inbound" placeholder="YYYY-MM-DD">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="flight-class">Choose your flight class</label>
+                    <select class="form-control" id="flight-class">
+                      <option selected>economy</option>
+                      <option>business</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="flight-adult">How many tickets would you like to purchase?</label>
+                    <select class="form-control" id="flight-adult">
+                      <option selected>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-primary close" id="submit-flight">Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {{!-- flights modal --}}
+
+        <div class="modal fade" id="add-budget" tabindex="-1" role="dialog" aria-labelledby="add-budget"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-center">Add an item to your budget</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="budget-name">Item Name</label>
+                    <input type="text" class="form-control" id="budget-name" placeholder="rental car">
+                  </div>
+                  <div class="form-group">
+                    <label for="budget-cost">Cost</label>
+                    <input type="text" class="form-control" id="budget-cost" placeholder="$0.00">
+                  </div>
+                  <div class="form-group">
+                    <label for="day-select">Select the day to budget this item on</label>
+                    <select class="form-control" id="day-select">
+                      <option selected>None</option>
+
+                    </select>
+                    <small class="form-text text-muted">(optional)</small>
+
+                  </div>
+
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-primary close"
+                  id="submit-budget-item">Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="budget" role="tabpanel" aria-labelledby="pills-budget-tab">
+          <div class="budget-container">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="card day">
+                  <div class="card-body">
+
+                    <h4 class="card-title text-center d-inline mt-4">Trip Items</h4>
+                    <a class="open-modal float-right" data-toggle="modal" data-target="add-budget"><i
+                        class="far fa-plus-square mb-3" style="font-size: 2.5rem"></i></a>
+                    <hr>
+
+
+                    <div>
+                      <table class="table bg-light shadow-lg p-3 mb-w bg-white rounded" id="trip-budget-items">
+
+                        <thead class="border-bottom text-white mb-3 border-dark bg-success rounded">
+                          <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Cost</th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title text-center">Day Items</h4>
+                    <hr>
+                    <div class="accordion" id="day-budget">
+
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--===============================================================================================-->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
+    integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-range/4.0.2/moment-range.js"
+    integrity="sha256-bB6c2ZfNzG6Tv8MSu/pqUl0y91h86M/T+1w0WrCZhGw=" crossorigin="anonymous"></script>
+  <!--===============================================================================================-->
+  <script>
+    var $id = {{ id }};
+  </script>
+  <script src="/js/trip.js"></script>

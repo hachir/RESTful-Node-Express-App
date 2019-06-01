@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-dark nav-custom">
+  <a class="navbar-brand" href="/dashboard">
+    <img src="/images/amelia-icon.png" class="logo"> <span class="logo-title">AMELIA</span>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#amelia-navbar"
+    aria-controls="amelia-navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="amelia-navbar">
+    <div class="navbar-nav ml-auto py-2">
+      <a class="nav-item nav-link btn bg-none border-0 mx-1" href="/login">Login</a>
+      <a class="nav-item nav-link btn bg-primary custom border-0 mx-1" href="/signup">Sign Up</a>
+    </div>
+  </div>
+</nav>
+
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
+      <h1 class="bodoni display-4">Login</h1>
+      <h5>Not a member? <a href="/signup" class="bo1">Sign Up Now</a></h5>
+      <form class="w-100 validate-form flex-sb flex-w" id="login" name="login" method="post" action="login">
+        <div class="p-t-31 p-b-9">
+          <span class="txt1">
+            Email
+          </span>
+        </div>
+        <div class="wrap-input100 validate-input" data-validate="Email is required">
+          <input class="input100" type="email" name="email" required aria-required="true" />
+          <span class="focus-input100"></span>
+        </div>
+
+        <div class="p-t-13 p-b-9">
+          <span class="txt1">
+            Password
+          </span>
+        </div>
+        <div class="wrap-input100 validate-input" data-validate="Password is required">
+          <input class="input100" type="password" name="password" required aria-required="true" />
+          <span class="focus-input100"></span>
+        </div>
+
+        <div class="container-login100-form-btn m-t-17">
+          <button class="login100-form-btn" type="submit" id="login-btn">
+            Log In
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!--===============================================================================================-->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!--===============================================================================================-->
